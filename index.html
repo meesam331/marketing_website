@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mrs Zeeshan — Handmade beauty oils, skincare & makeup crafted with love in Karachi, Pakistan. Natural, chemical-free products made specially for girls who deserve to glow." />
+  <meta name="keywords" content="handmade beauty, natural oils, makeup Karachi, Mrs Zeeshan, organic skincare Pakistan, girls beauty products" />
+  <meta name="author" content="Mrs Zeeshan" />
+  <meta property="og:title" content="Mrs Zeeshan | Handmade Beauty & Makeup — Karachi" />
+  <meta property="og:description" content="Premium handmade oils, skincare & makeup — crafted for the modern Pakistani girl. Shop from Karachi with nationwide delivery." />
+  <meta property="og:type" content="website" />
+  <title>Mrs Zeeshan | Handmade Beauty, Oils & Makeup — Karachi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg:#0c0610;--bg2:#140a14;--card:rgba(255,255,255,0.03);--cb:rgba(255,255,255,0.08);
+      --rose:#E8A0BF;--rose2:#D4739A;--roseg:rgba(232,160,191,0.35);
+      --gold:#F5D0C5;--gold2:#E8B4A0;--gg:rgba(245,208,197,0.35);
+      --blush:#FFB7C5;--lav:#C9A0DC;--lav2:#A78BFA;
+      --text:#FAF0F4;--muted:#B8A0AD;
+      --glass:rgba(20,10,20,0.78);--glb:rgba(255,255,255,0.10);--r:20px;
+      --ease:cubic-bezier(0.16,1,0.3,1);--t:all 0.45s var(--ease);
+      --serif:"Cormorant Garamond",Georgia,serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;cursor:none}
+    a{text-decoration:none;color:inherit} img{display:block;max-width:100%} ul{list-style:none}
+
+    #curdot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--rose);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+    #curring{position:fixed;top:0;left:0;width:36px;height:36px;border:2px solid rgba(232,160,191,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s}
+    @media(hover:none){#curdot,#curring{display:none}body{cursor:auto}}
+
+    #pcanvas{position:fixed;inset:0;z-index:-2;pointer-events:none}
+
+    .orb{position:fixed;border-radius:50%;filter:blur(130px);z-index:-1;pointer-events:none;opacity:0.28}
+    .o1{width:55vw;height:55vw;top:-15%;left:-15%;background:radial-gradient(circle,var(--rose),transparent 70%);animation:orbF 14s ease-in-out infinite alternate}
+    .o2{width:60vw;height:60vw;bottom:-15%;right:-15%;background:radial-gradient(circle,var(--lav2),transparent 70%);animation:orbF 18s ease-in-out infinite alternate-reverse}
+    .o3{width:35vw;height:35vw;top:40%;left:40%;background:radial-gradient(circle,var(--blush),transparent 70%);animation:orbF 10s ease-in-out infinite alternate;opacity:0.14}
+    @keyframes orbF{0%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,80px) scale(1.12)}100%{transform:translate(-30px,-20px) scale(0.92)}}
+
+    .con{width:92%;max-width:1280px;margin:0 auto}
+    .sp{padding:120px 0}
+
+    #spbar{position:fixed;top:0;left:0;height:3px;z-index:9999;background:linear-gradient(90deg,var(--rose),var(--lav));width:0%;transition:width 0.1s linear}
+
+    .ew{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:99px;background:rgba(232,160,191,0.1);border:1px solid rgba(232,160,191,0.3);color:var(--rose);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:1.4rem;animation:ewPulse 3s ease-in-out infinite}
+    @keyframes ewPulse{0%,100%{box-shadow:0 0 6px rgba(232,160,191,0.15)}50%{box-shadow:0 0 22px rgba(232,160,191,0.55)}}
+    h1,h2,h3{color:#fff;font-weight:800;line-height:1.15}
+    .sh{text-align:center;max-width:720px;margin:0 auto 4.5rem}
+    .sh h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-top:0.5rem;font-family:var(--serif);font-weight:700}
+    .sh p{color:var(--muted);margin-top:1rem;font-size:1.05rem}
+    .gt{background:linear-gradient(135deg,var(--rose),var(--blush),var(--lav));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;border-radius:14px;font-weight:700;font-size:0.95rem;transition:var(--t);cursor:none;border:none;overflow:hidden;z-index:1}
+    .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:translateX(-100%);transition:transform 0.6s ease;z-index:2}
+    .btn:hover::after{transform:translateX(100%)}
+    .btng{background:linear-gradient(135deg,var(--rose),var(--rose2));color:#1a0a12;box-shadow:0 12px 30px -5px var(--roseg)}
+    .btng:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 42px -5px var(--roseg)}
+    .btns{background:rgba(255,255,255,0.04);color:#fff;border:1px solid var(--cb);backdrop-filter:blur(10px)}
+    .btns:hover{background:rgba(232,160,191,0.1);border-color:rgba(232,160,191,0.35);transform:translateY(-4px)}
+
+    .nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:22px 0;transition:var(--t)}
+    .nav.scrolled{padding:12px 0;background:rgba(12,6,16,0.9);backdrop-filter:blur(22px) saturate(180%);border-bottom:1px solid var(--glb);box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+    .ni{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:14px}
+    .blogo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid rgba(232,160,191,0.4);box-shadow:0 0 20px rgba(232,160,191,0.2);background:linear-gradient(135deg,var(--rose),var(--lav));display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#1a0a12}
+    .bnm{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:1px;color:#fff;display:block}
+    .bsb{font-size:0.62rem;color:var(--rose);letter-spacing:2.5px;font-weight:700;display:block;text-transform:uppercase}
+    .nl{display:flex;gap:36px;align-items:center}
+    .nl a{color:var(--muted);font-weight:500;font-size:0.93rem;position:relative;transition:color 0.3s}
+    .nl a::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--rose);border-radius:2px;transition:width 0.35s var(--ease)}
+    .nl a:hover{color:#fff}.nl a:hover::after{width:100%}
+    .hamburger{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:none;padding:8px}
+    .mmenu{display:flex;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(12,6,16,0.97);backdrop-filter:blur(22px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px;transform:translateX(100%);transition:transform 0.45s var(--ease)}
+    .mmenu.open{transform:translateX(0)}
+    .mmenu a{color:#fff;font-size:1.8rem;font-weight:700;font-family:var(--serif);transition:color 0.3s}.mmenu a:hover{color:var(--rose)}
+    .mcls{position:absolute;top:28px;right:28px;background:none;border:none;color:#fff;font-size:1.8rem;cursor:none}
+    .nav-cta{display:flex}
+
+    .hero{padding:200px 0 120px;min-height:100vh;display:flex;align-items:center;position:relative}
+    .hg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .htag{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:99px;background:linear-gradient(135deg,rgba(232,160,191,0.15),rgba(201,160,220,0.1));border:1px solid rgba(232,160,191,0.3);margin-bottom:1.8rem;animation:ewPulse 3s ease-in-out infinite}
+    .htag span{font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rose)}
+    .hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,4.2rem);margin-bottom:1.6rem;font-weight:700}
+    .hero > .con > .hg > div > p{font-size:1.15rem;color:var(--muted);margin-bottom:2.8rem;max-width:560px}
+    .hbtns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:3.5rem}
+    .hstats{display:flex;gap:40px;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.07);flex-wrap:wrap}
+    .hs strong{display:block;font-size:2rem;font-weight:900;color:var(--rose);line-height:1}
+    .hs span{font-size:0.82rem;color:var(--muted);margin-top:4px;display:block}
+    .hv{position:relative}
+    .hmc{background:linear-gradient(145deg,rgba(30,12,28,0.95),rgba(15,8,18,0.9));border:1px solid rgba(232,160,191,0.15);border-radius:28px;padding:30px;box-shadow:0 40px 80px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.08);position:relative;overflow:hidden}
+    .hmc::before{content:"";position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--rose),transparent)}
+    .lbadge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(232,160,191,0.1);border:1px solid rgba(232,160,191,0.3);color:var(--blush);font-size:0.76rem;font-weight:700;margin-bottom:20px}
+    .ldot{width:7px;height:7px;border-radius:50%;background:var(--rose);animation:lp 1.8s infinite}
+    @keyframes lp{0%,100%{opacity:1}50%{opacity:0.3}}
+    .mets{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+    .met{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:18px 20px;transition:var(--t)}
+    .met:hover{background:rgba(232,160,191,0.06);border-color:rgba(232,160,191,0.25)}
+    .mv{font-size:1.9rem;font-weight:900;color:var(--rose);line-height:1.1;display:block}
+    .ml{font-size:0.77rem;color:var(--muted);display:block;margin-top:5px}
+    .tpanel{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(232,160,191,0.12),rgba(201,160,220,0.08));border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:20px}
+    .ticon{flex-shrink:0;width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,rgba(232,160,191,0.25),rgba(201,160,220,0.2));display:flex;align-items:center;justify-content:center;font-size:1.9rem;color:var(--rose);animation:tb 3s ease-in-out infinite;box-shadow:0 0 30px rgba(232,160,191,0.15)}
+    @keyframes tb{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+    .tsteps strong{display:block;font-size:1rem;margin-bottom:10px}
+    .tsteps li{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:0.82rem;margin-bottom:6px}
+    .tsteps li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 10px rgba(232,160,191,0.7);flex-shrink:0}
+    .fb{position:absolute;z-index:3;background:rgba(15,8,18,0.9);border:1px solid rgba(232,160,191,0.15);border-radius:16px;padding:14px 18px;backdrop-filter:blur(12px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+    .fb .fl{font-size:0.74rem;color:var(--muted);display:block}
+    .fb .fv{font-size:1.05rem;font-weight:800;color:#fff;display:block;margin-top:4px}
+    .fb .fi{font-size:1.2rem;color:var(--rose);margin-bottom:4px;display:block}
+    .fb1{top:5%;right:-8%;animation:flB 6s ease-in-out infinite}
+    .fb2{bottom:5%;left:-8%;animation:flB 6s ease-in-out infinite;animation-delay:-3s}
+    @keyframes flB{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+    .tkw{background:rgba(232,160,191,0.05);border-top:1px solid rgba(232,160,191,0.12);border-bottom:1px solid rgba(232,160,191,0.12);padding:16px 0;overflow:hidden}
+    .tkt{display:flex;gap:60px;white-space:nowrap;animation:tk 28s linear infinite}
+    .tkt:hover{animation-play-state:paused}
+    .ti{display:flex;align-items:center;gap:12px;font-size:0.88rem;font-weight:600;color:var(--muted);flex-shrink:0}
+    .ti i{color:var(--rose)}
+    @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .ga{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+    .gc{background:var(--card);border:1px solid var(--cb);padding:38px;border-radius:var(--r);position:relative;overflow:hidden;transition:transform 0.2s ease-out,border-color 0.4s,box-shadow 0.4s;transform-style:preserve-3d}
+    .gc::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,160,191,0.04),transparent);border-radius:inherit;pointer-events:none}
+    .gc:hover{border-color:rgba(232,160,191,0.4);box-shadow:0 30px 60px rgba(0,0,0,0.5),0 0 40px rgba(232,160,191,0.1)}
+    .iw{width:64px;height:64px;border-radius:16px;background:rgba(232,160,191,0.12);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:26px;transition:var(--t);transform:translateZ(20px)}
+    .gc:hover .iw{background:linear-gradient(135deg,var(--rose),var(--rose2));color:#1a0a12;transform:translateZ(30px) rotate(360deg);box-shadow:0 10px 25px rgba(232,160,191,0.3)}
+    .gc h3{font-size:1.22rem;margin-bottom:12px;transform:translateZ(15px)}
+    .gc p{color:var(--muted);font-size:0.92rem;transform:translateZ(10px)}
+    .cl{margin-top:20px;transform:translateZ(8px)}
+    .cl li{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:0.87rem;margin-bottom:9px}
+    .cl li i{color:var(--rose);width:14px}
+    .vbadge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--rose),var(--blush));color:#1a0a12;font-size:0.65rem;font-weight:800;padding:4px 10px;border-radius:99px;letter-spacing:1px;text-transform:uppercase}
+    .price-tag{display:inline-block;margin-top:16px;padding:6px 14px;border-radius:99px;background:rgba(232,160,191,0.1);border:1px solid rgba(232,160,191,0.25);color:var(--rose);font-size:0.85rem;font-weight:700;transform:translateZ(8px)}
+
+    .ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .aiw{position:relative}
+    .aimg{width:100%;height:480px;border-radius:24px;object-fit:cover;border:1px solid rgba(232,160,191,0.15);box-shadow:0 40px 80px rgba(0,0,0,0.5)}
+    .aco{position:absolute;bottom:-24px;right:-24px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--glb);border-radius:20px;padding:24px 28px;min-width:200px;box-shadow:0 20px 40px rgba(0,0,0,0.4)}
+    .aco .bn{font-size:2.8rem;font-weight:900;color:var(--rose);line-height:1;font-family:var(--serif)}
+    .aco .lb{color:var(--muted);font-size:0.85rem;margin-top:6px}
+    .ac h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:1.2rem;font-weight:700}
+    .ac-p{color:var(--muted);font-size:1rem;margin-bottom:1rem}
+    .fl2{margin-top:2rem;display:grid;gap:16px}
+    .fr{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);transition:var(--t)}
+    .fr:hover{background:rgba(232,160,191,0.06);border-color:rgba(232,160,191,0.25)}
+    .fri{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:rgba(232,160,191,0.12);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .fr h4{font-size:0.95rem;margin-bottom:4px}
+    .fr-p{font-size:0.84rem;color:var(--muted);margin:0}
+
+    .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+    .sc{position:relative}
+    .sn{font-size:4rem;font-weight:900;color:rgba(255,255,255,0.04);position:absolute;top:14px;right:18px;transition:var(--t);line-height:1;font-family:var(--serif)}
+    .sc:hover .sn{color:rgba(232,160,191,0.18);transform:scale(1.1)}
+    .si{width:52px;height:52px;border-radius:14px;background:rgba(232,160,191,0.12);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px;transition:var(--t)}
+    .sc:hover .si{background:linear-gradient(135deg,var(--rose),var(--rose2));color:#1a0a12;box-shadow:0 10px 25px rgba(232,160,191,0.3)}
+    .sc p{color:var(--muted);font-size:0.92rem}
+
+    .sts{padding:80px 0;background:linear-gradient(135deg,rgba(232,160,191,0.06),rgba(201,160,220,0.04));border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+    .stg{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
+    .sti{padding:30px 20px}
+    .stv{font-size:3.5rem;font-weight:900;background:linear-gradient(135deg,var(--rose),var(--lav));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;display:block;font-family:var(--serif)}
+    .stl{color:var(--muted);font-size:0.9rem;margin-top:10px;display:block}
+    .stI{font-size:2rem;color:var(--rose);margin-bottom:12px;display:block}
+
+    .teg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+    .tec{background:var(--card);border:1px solid var(--cb);border-radius:var(--r);padding:36px;position:relative;overflow:hidden;transition:var(--t)}
+    .tec::before{content:open-quote;position:absolute;top:10px;right:20px;font-size:6rem;color:rgba(232,160,191,0.08);line-height:1;font-family:Georgia,serif}
+    .tec:hover{border-color:rgba(232,160,191,0.35);transform:translateY(-6px)}
+    .stars{color:var(--rose);font-size:0.9rem;margin-bottom:16px}
+    .tec-p{color:var(--muted);font-size:0.95rem;line-height:1.75;margin-bottom:24px}
+    .rev{display:flex;align-items:center;gap:14px}
+    .rav{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--lav));display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#1a0a12;flex-shrink:0}
+    .rnm{font-size:0.92rem;font-weight:700;display:block}
+    .rlb{font-size:0.78rem;color:var(--muted);display:block}
+
+    .loc-banner{background:linear-gradient(135deg,rgba(232,160,191,0.08),rgba(201,160,220,0.06));border:1px solid rgba(232,160,191,0.2);border-radius:24px;padding:50px;text-align:center;margin-bottom:60px;position:relative;overflow:hidden}
+    .loc-banner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(232,160,191,0.1),transparent 60%);pointer-events:none}
+    .loc-banner h3{font-family:var(--serif);font-size:2rem;margin-bottom:12px}
+    .loc-banner p{color:var(--muted);max-width:600px;margin:0 auto 24px}
+    .loc-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .loc-tag{padding:8px 18px;border-radius:99px;background:rgba(255,255,255,0.04);border:1px solid rgba(232,160,191,0.2);font-size:0.85rem;color:var(--muted)}
+    .loc-tag i{color:var(--rose);margin-right:6px}
+
+    .ctg{display:grid;grid-template-columns:1fr 1.3fr;gap:50px}
+    .ci h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem;font-weight:700}
+    .ci-p{color:var(--muted);margin-bottom:2rem}
+    .il{display:grid;gap:16px}
+    .ii{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);transition:var(--t)}
+    .ii:hover{background:rgba(232,160,191,0.06);border-color:rgba(232,160,191,0.25)}
+    .iico{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:rgba(232,160,191,0.12);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .ii-sp{font-size:0.85rem;color:var(--muted);display:block}
+    .ii a,.ii strong{color:#fff;font-weight:600;font-size:0.95rem}
+    .cf{background:var(--card);border:1px solid var(--cb);border-radius:24px;padding:44px;position:relative;overflow:hidden}
+    .cf::before{content:"";position:absolute;top:-1px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,transparent,var(--rose),transparent)}
+    .cf h3{font-size:1.4rem;margin-bottom:1.8rem}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .fg{margin-bottom:18px}
+    .fg label{display:block;font-size:0.84rem;font-weight:600;margin-bottom:8px;color:var(--muted)}
+    input,select,textarea{width:100%;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid var(--cb);border-radius:12px;color:#fff;font-family:inherit;font-size:0.93rem;outline:none;transition:var(--t)}
+    input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.3)}
+    input:focus,select:focus,textarea:focus{border-color:var(--rose);background:rgba(232,160,191,0.04);box-shadow:0 0 20px rgba(232,160,191,0.15)}
+    select option{background:#1a0a14}
+    textarea{resize:vertical;min-height:120px}
+
+    .toast{position:fixed;bottom:100px;right:30px;z-index:9000;background:linear-gradient(135deg,rgba(30,12,28,0.95),rgba(20,10,25,0.9));border:1px solid rgba(232,160,191,0.3);border-radius:16px;padding:16px 24px;color:#fff;font-size:0.9rem;box-shadow:0 20px 40px rgba(0,0,0,0.5),0 0 20px rgba(232,160,191,0.1);transform:translateY(20px) scale(0.95);opacity:0;transition:var(--t);pointer-events:none;max-width:320px;display:flex;align-items:center;gap:12px}
+    .toast.show{transform:translateY(0) scale(1);opacity:1}
+    .toast i{color:var(--rose);font-size:1.2rem}
+
+    .wa{position:fixed;bottom:32px;right:32px;z-index:1000;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#25d366,#20bf57);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;box-shadow:0 10px 30px rgba(37,211,102,0.45);transition:var(--t);animation:wap 2.5s infinite}
+    .wa:hover{transform:scale(1.15) rotate(10deg)}
+    @keyframes wap{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}70%{box-shadow:0 0 0 22px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+    .ig{position:fixed;bottom:32px;right:108px;z-index:1000;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 10px 30px rgba(220,39,67,0.35);transition:var(--t)}
+    .ig:hover{transform:scale(1.12)}
+
+    .footer{padding:30px 0 40px;border-top:1px solid rgba(255,255,255,0.06);background:rgba(12,6,16,0.6)}
+    .fi2{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .fbrand{display:flex;align-items:center;gap:10px}
+    .fbrand .blogo{width:36px;height:36px;font-size:1rem}
+    .fbrand span{font-family:var(--serif);font-weight:700;font-size:1.1rem}
+    .fcopy{color:var(--muted);font-size:0.88rem;text-align:center}
+    .fdev{color:var(--muted);font-size:0.88rem;display:flex;align-items:center;gap:8px}
+    .fdev .dn{color:var(--rose);font-weight:700}
+    .fdev i{color:var(--rose)}
+
+    .rv{opacity:0;transform:translateY(50px);transition:opacity 0.9s var(--ease),transform 0.9s var(--ease)}
+    .rvl{opacity:0;transform:translateX(-60px);transition:opacity 0.9s var(--ease),transform 0.9s var(--ease)}
+    .rvr{opacity:0;transform:translateX(60px);transition:opacity 0.9s var(--ease),transform 0.9s var(--ease)}
+    .rvs{opacity:0;transform:scale(0.85);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+    .rv.vis,.rvl.vis,.rvr.vis,.rvs.vis{opacity:1;transform:none}
+
+    @media(max-width:1024px){.hg,.ag,.ctg{grid-template-columns:1fr;gap:60px}.stg{grid-template-columns:repeat(2,1fr)}.fb1,.fb2{display:none}.ig{display:none}}
+    @media(max-width:768px){.nl,.nav-cta{display:none}.hamburger{display:block}.sp{padding:80px 0}.stg{grid-template-columns:repeat(2,1fr)}.frow{grid-template-columns:1fr}.hstats{flex-wrap:wrap;gap:24px}.aco{display:none}.aimg{height:320px}}
+    @media(max-width:480px){.hero h1{font-size:2.4rem}.stg{grid-template-columns:1fr 1fr}.fi2{flex-direction:column;text-align:center}.loc-banner{padding:30px 20px}}
+  </style>
+</head>
+<body>
+
+<div id="spbar"></div>
+<div id="curdot"></div>
+<div id="curring"></div>
+<canvas id="pcanvas"></canvas>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+
+<a class="wa" href="https://wa.me/923001234567?text=Hi%20Mrs%20Zeeshan!%20I%20saw%20your%20website%20and%20want%20to%20order%20beauty%20products." target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a class="ig" href="https://instagram.com/mrszeeshan.beauty" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<div class="toast" id="toast"><i class="fas fa-heart"></i><span id="tmsg">Thank you, gorgeous! We'll get back to you soon.</span></div>
+
+<div class="mmenu" id="mmenu">
+  <button class="mcls" id="mcls" aria-label="Close"><i class="fas fa-times"></i></button>
+  <a href="#home" onclick="cm()">Home</a>
+  <a href="#products" onclick="cm()">Products</a>
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#process" onclick="cm()">How to Order</a>
+  <a href="#testimonials" onclick="cm()">Reviews</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="con ni">
+    <div class="brand">
+      <div class="blogo"><i class="fas fa-spa"></i></div>
+      <div><span class="bnm">Mrs Zeeshan</span><span class="bsb">Handmade Beauty</span></div>
+    </div>
+    <div class="nl">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#process">How to Order</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta"><a class="btn btng" href="https://wa.me/923001234567?text=Hi%20Mrs%20Zeeshan!%20I%20want%20to%20order." target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a></div>
+    <button class="hamburger" id="ham" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="con hg">
+    <div class="rv">
+      <div class="htag"><i class="fas fa-heart" style="color:var(--rose)"></i><span>Made with Love in Karachi</span></div>
+      <h1>Your Glow Starts with <span class="gt">Mrs Zeeshan.</span></h1>
+      <p style="font-size:1.15rem;color:var(--muted);margin-bottom:2.8rem;max-width:560px">Handcrafted beauty oils, skincare &amp; makeup — made specially for girls who deserve to feel beautiful, confident &amp; radiant every single day.</p>
+      <div class="hbtns">
+        <a class="btn btng" href="https://wa.me/923001234567?text=Hi%20Mrs%20Zeeshan!%20I%20want%20to%20shop%20your%20handmade%20beauty%20products." target="_blank"><i class="fab fa-whatsapp"></i> Shop on WhatsApp</a>
+        <a class="btn btns" href="#products"><i class="fas fa-gem"></i> Explore Products</a>
+      </div>
+      <div class="hstats">
+        <div class="hs"><strong class="cnt" data-t="800" data-s="+">0+</strong><span>Happy Girls</span></div>
+        <div class="hs"><strong class="cnt" data-t="50" data-s="+">0+</strong><span>Handmade Products</span></div>
+        <div class="hs"><strong class="cnt" data-t="100" data-s="%">0%</strong><span>Natural Ingredients</span></div>
+      </div>
+    </div>
+    <div class="hv rv">
+      <div class="hmc">
+        <div class="lbadge"><span class="ldot"></span> Now Taking Orders — Karachi</div>
+        <div class="mets">
+          <div class="met"><span class="mv">100%</span><span class="ml">Handmade</span></div>
+          <div class="met"><span class="mv">0%</span><span class="ml">Chemicals</span></div>
+          <div class="met"><span class="mv">Free</span><span class="ml">Karachi Delivery</span></div>
+          <div class="met"><span class="mv">24hr</span><span class="ml">WhatsApp Reply</span></div>
+        </div>
+        <div class="tpanel">
+          <div class="ticon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <div class="tsteps">
+            <strong>Your Beauty Journey in 3 Steps</strong>
+            <ul>
+              <li>Browse &amp; Pick Your Favourites</li>
+              <li>Order via WhatsApp — Easy!</li>
+              <li>Glow &amp; Feel Absolutely Stunning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="fb fb1"><i class="fas fa-leaf fi"></i><span class="fl">100% Natural</span><span class="fv">Pure handmade oils</span></div>
+      <div class="fb fb2"><i class="fas fa-truck fi"></i><span class="fl">Fast Delivery</span><span class="fv">All over Karachi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="tkw">
+  <div class="tkt">
+    <span class="ti"><i class="fas fa-leaf"></i> 100% Natural Ingredients</span>
+    <span class="ti"><i class="fas fa-hand-sparkles"></i> Handmade with Love</span>
+    <span class="ti"><i class="fas fa-droplet"></i> Premium Beauty Oils</span>
+    <span class="ti"><i class="fas fa-palette"></i> Custom Makeup Shades</span>
+    <span class="ti"><i class="fas fa-heart"></i> Made for Pakistani Girls</span>
+    <span class="ti"><i class="fas fa-location-dot"></i> Karachi, Pakistan</span>
+    <span class="ti"><i class="fas fa-truck"></i> Free Karachi Delivery</span>
+    <span class="ti"><i class="fab fa-whatsapp"></i> Order on WhatsApp</span>
+    <span class="ti"><i class="fas fa-leaf"></i> 100% Natural Ingredients</span>
+    <span class="ti"><i class="fas fa-hand-sparkles"></i> Handmade with Love</span>
+    <span class="ti"><i class="fas fa-droplet"></i> Premium Beauty Oils</span>
+    <span class="ti"><i class="fas fa-palette"></i> Custom Makeup Shades</span>
+    <span class="ti"><i class="fas fa-heart"></i> Made for Pakistani Girls</span>
+    <span class="ti"><i class="fas fa-location-dot"></i> Karachi, Pakistan</span>
+    <span class="ti"><i class="fas fa-truck"></i> Free Karachi Delivery</span>
+    <span class="ti"><i class="fab fa-whatsapp"></i> Order on WhatsApp</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="sp" id="products">
+  <div class="con">
+    <div class="sh rv">
+      <span class="ew"><i class="fas fa-gem"></i> Our Collection</span>
+      <h2>Handmade Beauty <span class="gt">Just for You</span></h2>
+      <p>Every product is carefully crafted by hand using the finest natural ingredients — because you deserve nothing less than pure luxury.</p>
+    </div>
+    <div class="ga">
+      <div class="gc tilt rv">
+        <div class="vbadge">Bestseller</div>
+        <div class="iw"><i class="fas fa-droplet"></i></div>
+        <h3>Beauty &amp; Hair Oils</h3>
+        <p>Pure handmade oils for glowing skin, long hair &amp; natural radiance. Almond, coconut, rose &amp; custom blends.</p>
+        <ul class="cl">
+          <li><i class="fas fa-check"></i> Glowing skin &amp; hair growth</li>
+          <li><i class="fas fa-check"></i> No chemicals or preservatives</li>
+          <li><i class="fas fa-check"></i> Custom blends available</li>
+        </ul>
+        <span class="price-tag">From Rs. 500</span>
+      </div>
+      <div class="gc tilt rv">
+        <div class="vbadge">Popular</div>
+        <div class="iw"><i class="fas fa-palette"></i></div>
+        <h3>Handmade Makeup</h3>
+        <p>Beautiful lip tints, blush, highlighters &amp; more — shades designed for Pakistani skin tones.</p>
+        <ul class="cl">
+          <li><i class="fas fa-check"></i> Long-lasting natural formula</li>
+          <li><i class="fas fa-check"></i> Perfect for daily &amp; party wear</li>
+          <li><i class="fas fa-check"></i> Custom shade matching</li>
+        </ul>
+        <span class="price-tag">From Rs. 350</span>
+      </div>
+      <div class="gc tilt rv">
+        <div class="vbadge">New</div>
+        <div class="iw"><i class="fas fa-spa"></i></div>
+        <h3>Skincare Essentials</h3>
+        <p>Face masks, scrubs, serums &amp; moisturizers — gentle on skin, tough on dullness &amp; acne.</p>
+        <ul class="cl">
+          <li><i class="fas fa-check"></i> Suitable for all skin types</li>
+          <li><i class="fas fa-check"></i> Anti-acne &amp; brightening</li>
+          <li><i class="fas fa-check"></i> Fresh batches every week</li>
+        </ul>
+        <span class="price-tag">From Rs. 400</span>
+      </div>
+      <div class="gc tilt rv">
+        <div class="vbadge">Gift Set</div>
+        <div class="iw"><i class="fas fa-gift"></i></div>
+        <h3>Beauty Gift Boxes</h3>
+        <p>Curated gift sets for birthdays, weddings &amp; bridal showers — beautifully packaged with love.</p>
+        <ul class="cl">
+          <li><i class="fas fa-check"></i> Perfect for gifting</li>
+          <li><i class="fas fa-check"></i> Customizable contents</li>
+          <li><i class="fas fa-check"></i> Elegant packaging included</li>
+        </ul>
+        <span class="price-tag">From Rs. 1,500</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sp" id="about">
+  <div class="con ag">
+    <div class="aiw rvl">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80" alt="Handmade beauty products by Mrs Zeeshan" class="aimg" />
+      <div class="aco rvs"><div class="bn cnt" data-t="3" data-s="+">0+</div><div class="lb">Years Crafting Beauty</div></div>
+    </div>
+    <div class="ac rvr">
+      <span class="ew"><i class="fas fa-heart"></i> Our Story</span>
+      <h2>Beauty Crafted with <span class="gt">Love &amp; Passion</span></h2>
+      <p class="ac-p">Mrs Zeeshan started in Karachi with one simple dream — to create beauty products that Pakistani girls can trust. Every jar, every bottle, every shade is made by hand with ingredients you'd actually want on your skin.</p>
+      <p class="ac-p">We believe every girl deserves to feel special. That's why we don't mass-produce — we craft each order with care, just for you.</p>
+      <div class="fl2">
+        <div class="fr"><div class="fri"><i class="fas fa-leaf"></i></div><div><h4>100% Natural &amp; Chemical-Free</h4><p class="fr-p">Only pure, skin-loving ingredients — no harsh chemicals ever.</p></div></div>
+        <div class="fr"><div class="fri"><i class="fas fa-hand-holding-heart"></i></div><div><h4>Made for Pakistani Girls</h4><p class="fr-p">Shades &amp; formulas designed for our climate and skin tones.</p></div></div>
+        <div class="fr"><div class="fri"><i class="fas fa-location-dot"></i></div><div><h4>Proudly Karachi-Based</h4><p class="fr-p">Free delivery across Karachi. Nationwide shipping available.</p></div></div>
+        <div class="fr"><div class="fri"><i class="fas fa-star"></i></div><div><h4>Personalized for You</h4><p class="fr-p">Custom shades, scents &amp; blends — because you're one of a kind.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION BANNER -->
+<section class="sp" style="padding-top:0">
+  <div class="con">
+    <div class="loc-banner rv">
+      <h3><i class="fas fa-location-dot" style="color:var(--rose)"></i> Based in Karachi, Delivering Beauty</h3>
+      <p>We're a home-grown Karachi brand serving girls across the city and beyond. Order today and get free delivery anywhere in Karachi!</p>
+      <div class="loc-tags">
+        <span class="loc-tag"><i class="fas fa-map-pin"></i> DHA Karachi</span>
+        <span class="loc-tag"><i class="fas fa-map-pin"></i> Clifton</span>
+        <span class="loc-tag"><i class="fas fa-map-pin"></i> Gulshan</span>
+        <span class="loc-tag"><i class="fas fa-map-pin"></i> North Nazimabad</span>
+        <span class="loc-tag"><i class="fas fa-map-pin"></i> All Karachi Areas</span>
+        <span class="loc-tag"><i class="fas fa-plane"></i> Nationwide Shipping</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sp" id="process" style="padding-top:0">
+  <div class="con">
+    <div class="sh rv">
+      <span class="ew"><i class="fas fa-shopping-bag"></i> Easy Ordering</span>
+      <h2>How to Get Your <span class="gt">Glow On</span></h2>
+      <p>Ordering your favourite handmade beauty products is super easy — just 4 simple steps!</p>
+    </div>
+    <div class="pg">
+      <div class="gc tilt sc rv"><span class="sn">01</span><div class="si"><i class="fas fa-search"></i></div><h3>Browse Products</h3><p>Explore our collection of oils, makeup, skincare &amp; gift sets. Find what makes you feel beautiful.</p></div>
+      <div class="gc tilt sc rv"><span class="sn">02</span><div class="si"><i class="fab fa-whatsapp"></i></div><h3>WhatsApp Us</h3><p>Send us a message with your order. Tell us your skin type or shade preference — we'll help you choose!</p></div>
+      <div class="gc tilt sc rv"><span class="sn">03</span><div class="si"><i class="fas fa-hand-sparkles"></i></div><h3>We Handcraft It</h3><p>Your order is freshly made by hand with love. We never use old stock — always fresh batches.</p></div>
+      <div class="gc tilt sc rv"><span class="sn">04</span><div class="si"><i class="fas fa-truck"></i></div><h3>Delivered to You</h3><p>Free delivery in Karachi! Your beauty products arrive beautifully packaged and ready to use.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sts" id="stats">
+  <div class="con">
+    <div class="stg">
+      <div class="sti rv"><i class="fas fa-heart stI"></i><span class="stv cnt" data-t="800" data-s="+">0+</span><span class="stl">Happy Girls</span></div>
+      <div class="sti rv"><i class="fas fa-box-open stI"></i><span class="stv cnt" data-t="2000" data-s="+">0+</span><span class="stl">Orders Delivered</span></div>
+      <div class="sti rv"><i class="fas fa-flask stI"></i><span class="stv cnt" data-t="50" data-s="+">0+</span><span class="stl">Unique Products</span></div>
+      <div class="sti rv"><i class="fas fa-star stI"></i><span class="stv cnt" data-t="99" data-s="%">0%</span><span class="stl">Customer Love</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sp" id="testimonials">
+  <div class="con">
+    <div class="sh rv">
+      <span class="ew"><i class="fas fa-star"></i> Girl Love</span>
+      <h2>What Our <span class="gt">Beautiful Clients</span> Say</h2>
+      <p>Real reviews from real girls who fell in love with Mrs Zeeshan products.</p>
+    </div>
+    <div class="teg">
+      <div class="tec rv"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="tec-p">OMG the rose hair oil is EVERYTHING! My hair has never been this soft and shiny. Mrs Zeeshan literally saved my dry hair. Already ordered 3 more bottles for my friends!</p><div class="rev"><div class="rav">AF</div><div><span class="rnm">Ayesha Farooq</span><span class="rlb">Hair Oil — DHA Karachi</span></div></div></div>
+      <div class="tec rv"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="tec-p">The lip tint shade is PERFECT for my skin tone! Finally makeup that actually suits Pakistani girls. The packaging is so cute too — I feel so special unboxing it.</p><div class="rev"><div class="rav">ZK</div><div><span class="rnm">Zainab Khan</span><span class="rlb">Makeup — Clifton Karachi</span></div></div></div>
+      <div class="tec rv"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="tec-p">Ordered a bridal gift box for my best friend's mehndi — she absolutely LOVED it! The products smell amazing and her skin was glowing. Best gift ever, hands down!</p><div class="rev"><div class="rav">MH</div><div><span class="rnm">Maria Hussain</span><span class="rlb">Gift Box — Gulshan Karachi</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sp" id="contact">
+  <div class="con ctg">
+    <div class="ci rvl">
+      <span class="ew"><i class="fas fa-envelope"></i> Get In Touch</span>
+      <h2>Ready to <span class="gt">Glow?</span></h2>
+      <p class="ci-p">Have questions about a product? Want a custom shade or gift box? We'd love to hear from you, gorgeous!</p>
+      <div class="il">
+        <div class="ii"><div class="iico"><i class="fab fa-whatsapp"></i></div><div><span class="ii-sp">WhatsApp (Fastest!)</span><a href="https://wa.me/923001234567" target="_blank">Message us to order</a></div></div>
+        <div class="ii"><div class="iico"><i class="fab fa-instagram"></i></div><div><span class="ii-sp">Instagram</span><a href="https://instagram.com/mrszeeshan.beauty" target="_blank">@mrszeeshan.beauty</a></div></div>
+        <div class="ii"><div class="iico"><i class="fas fa-envelope"></i></div><div><span class="ii-sp">Email</span><strong>mrszeeshan.beauty@gmail.com</strong></div></div>
+        <div class="ii"><div class="iico"><i class="fas fa-location-dot"></i></div><div><span class="ii-sp">Location</span><strong>Karachi, Pakistan</strong></div></div>
+      </div>
+    </div>
+    <div class="cf tilt rvr">
+      <h3>Send Us a <span class="gt">Message</span></h3>
+      <form id="cform">
+        <div class="frow">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="e.g. Ayesha" required /></div>
+          <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="03XX-XXXXXXX" required /></div>
+        </div>
+        <div class="fg"><label>Email (optional)</label><input type="email" placeholder="your@email.com" /></div>
+        <div class="fg"><label>Interested In</label>
+          <select required>
+            <option value="" disabled selected>Select a product</option>
+            <option>Beauty &amp; Hair Oils</option>
+            <option>Handmade Makeup</option>
+            <option>Skincare Essentials</option>
+            <option>Beauty Gift Box</option>
+            <option>Custom Order</option>
+          </select>
+        </div>
+        <div class="fg"><label>Your Message</label><textarea placeholder="Tell us what you're looking for, your skin type, favourite shades..."></textarea></div>
+        <button type="submit" class="btn btng" style="width:100%;padding:18px"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="con fi2">
+    <div class="fbrand">
+      <div class="blogo"><i class="fas fa-spa"></i></div>
+      <span>Mrs Zeeshan</span>
+    </div>
+    <div class="fcopy">&copy; 2025 Mrs Zeeshan — Handmade Beauty, Karachi Pakistan. All rights reserved.</div>
+    <div class="fdev"><i class="fas fa-code"></i> Developed by <span class="dn">Meesam Raza</span></div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+var dot=document.getElementById('curdot'),ring=document.getElementById('curring'),mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+(function loop(){
+  if(dot){dot.style.left=mx+'px';dot.style.top=my+'px'}
+  rx+=(mx-rx)*0.14; ry+=(my-ry)*0.14;
+  if(ring){ring.style.left=rx+'px';ring.style.top=ry+'px'}
+  requestAnimationFrame(loop);
+})();
+
+var spbar=document.getElementById('spbar');
+window.addEventListener('scroll',function(){
+  var p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  if(spbar)spbar.style.width=p+'%';
+},{passive:true});
+
+var navEl=document.getElementById('nav');
+window.addEventListener('scroll',function(){navEl.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+
+var ham=document.getElementById('ham'),mm=document.getElementById('mmenu'),mcl=document.getElementById('mcls');
+function cm(){if(mm)mm.classList.remove('open')}
+if(ham)ham.addEventListener('click',function(){mm.classList.add('open')});
+if(mcl)mcl.addEventListener('click',cm);
+
+var canvas=document.getElementById('pcanvas'),ctx=canvas.getContext('2d'),W,H,pts=[];
+function initC(){
+  W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight;
+  var n=Math.max(25,Math.floor((W*H)/14000));
+  pts=[];
+  for(var i=0;i<n;i++) pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+0.5,vx:(Math.random()-.5)*.7,vy:(Math.random()-.5)*.7,c:Math.random()>.5?'rgba(232,160,191,':'rgba(201,160,220,'});
+}
+function drawP(){
+  ctx.clearRect(0,0,W,H);
+  for(var i=0;i<pts.length;i++){
+    var p=pts[i]; p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+    ctx.fillStyle=p.c+'0.55)'; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+    for(var j=i+1;j<pts.length;j++){
+      var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120){ctx.strokeStyle='rgba(201,160,220,'+(1-d/120)*.3+')';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}
+    }
+  }
+  requestAnimationFrame(drawP);
+}
+window.addEventListener('resize',initC); initC(); drawP();
+
+document.querySelectorAll('.tilt').forEach(function(c){
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect(),cx2=r.width/2,cy2=r.height/2;
+    var rx2=((e.clientY-r.top-cy2)/cy2)*-10, ry2=((e.clientX-r.left-cx2)/cx2)*10;
+    c.style.transform='rotateX('+rx2+'deg) rotateY('+ry2+'deg) scale3d(1.02,1.02,1.02)';
+  });
+  c.addEventListener('mouseleave',function(){c.style.transform='rotateX(0) rotateY(0) scale3d(1,1,1)'});
+});
+
+var oi=0;
+var obs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      var d=parseFloat(e.target.dataset.d||0);
+      setTimeout(function(){e.target.classList.add('vis')},d);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.rv,.rvl,.rvr,.rvs').forEach(function(el){
+  el.dataset.d=oi*80; oi++; obs.observe(el);
+});
+
+var cobs=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){animCnt(e.target);cobs.unobserve(e.target)}});
+},{threshold:0.5});
+function animCnt(el){
+  var t=parseInt(el.dataset.t,10),s=el.dataset.s||'',dur=2000,step=16,inc=t/(dur/step),cur=0;
+  var tm=setInterval(function(){cur+=inc;if(cur>=t){cur=t;clearInterval(tm)}el.textContent=Math.floor(cur)+s},step);
+}
+document.querySelectorAll('.cnt').forEach(function(el){cobs.observe(el)});
+
+var toastEl=document.getElementById('toast'),tmsgEl=document.getElementById('tmsg');
+function showT(m){
+  if(!toastEl)return;
+  tmsgEl.textContent=m; toastEl.classList.add('show');
+  clearTimeout(showT._t); showT._t=setTimeout(function(){toastEl.classList.remove('show')},3200);
+}
+
+document.querySelectorAll('form').forEach(function(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]');
+    if(btn){
+      var orig=btn.innerHTML;
+      btn.innerHTML='<i class="fas fa-heart"></i> Message Sent!';
+      btn.disabled=true; btn.style.background='linear-gradient(135deg,#E8A0BF,#D4739A)'; btn.style.color='#1a0a12';
+      setTimeout(function(){btn.innerHTML=orig;btn.disabled=false;btn.style.background='';btn.style.color=''},3000);
+    }
+    form.reset(); showT('Thank you, gorgeous! We\'ll get back to you soon.');
+  });
+});
+</script>
+</body>
+</html>

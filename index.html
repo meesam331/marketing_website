@@ -534,6 +534,41 @@
     .mobile-menu a:hover {
       color: var(--rose);
     }
+
+    .mobile-menu .menu-heading {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      font-weight: 800;
+    }
+
+    .mobile-menu .menu-category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 10px;
+      width: min(92%, 360px);
+    }
+
+    .mobile-menu {
+      overflow-y: auto;
+      padding: 80px 0 36px;
+    }
+
+    .mobile-menu .menu-category-grid a {
+      padding: 12px 10px;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      background: rgba(255, 253, 248, 0.72);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .mobile-menu .menu-category-grid a:hover {
+      background: var(--sage-light);
+    }
     .mobile-close {
       position: absolute;
       top: 24px;
@@ -1772,6 +1807,296 @@
       .hero-stats { grid-template-columns: 1fr 1fr; gap: 14px; }
       .delivery-banner { padding: 30px 20px; }
     }
+
+    /* PRODUCT-FIRST STORE MODE */
+    :root {
+      --bg: #fbf8f0;
+      --bg-alt: #f2eee3;
+      --bg-card: #fffdf8;
+      --card-border: rgba(14, 92, 82, 0.16);
+      --rose: #df6b52;
+      --rose-dark: #b84e3e;
+      --rose-light: #fbe8df;
+      --gold: #e5b84f;
+      --gold-dark: #a97819;
+      --gold-light: #fff4d2;
+      --sage: #0e5c52;
+      --sage-light: #e0efeb;
+      --teal: #2e8276;
+      --plum: #193b36;
+      --text: #35514b;
+      --text-muted: #71847c;
+      --heading: #193b36;
+      --glass: rgba(255, 253, 248, 0.94);
+      --shadow-sm: 0 5px 18px rgba(25, 59, 54, 0.07);
+      --shadow-md: 0 16px 34px rgba(25, 59, 54, 0.11);
+      --shadow-lg: 0 24px 60px rgba(25, 59, 54, 0.14);
+    }
+
+    body::before {
+      background: radial-gradient(circle at 12% 10%, rgba(229, 184, 79, 0.22), transparent 32%),
+                  radial-gradient(circle at 88% 72%, rgba(223, 107, 82, 0.13), transparent 34%),
+                  linear-gradient(135deg, #fbf8f0 0%, #f1eee5 100%);
+    }
+
+    .top-bar,
+    .live-order-toast {
+      display: none;
+    }
+
+    .hero {
+      display: block;
+      min-height: auto;
+      padding: 142px 0 64px;
+    }
+
+    .hero-grid {
+      display: block;
+    }
+
+    .hero-right,
+    .hero-actions a:not(:first-child),
+    .hero-stats {
+      display: none;
+    }
+
+    .hero-left {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      animation: catalogRise 0.7s var(--ease) both;
+    }
+
+    .hero-left .badge-pill {
+      background: var(--rose-light);
+      border-color: rgba(223, 107, 82, 0.26);
+      color: var(--rose-dark);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      margin: 18px auto 12px;
+    }
+
+    .hero h1 .grad-text {
+      background: none;
+      color: var(--rose);
+      -webkit-text-fill-color: currentColor;
+    }
+
+    .hero-subtitle {
+      max-width: 520px;
+      margin: 0 auto 24px;
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .nav {
+      top: 0;
+      padding: 14px 0;
+      background: rgba(251, 248, 240, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav.scrolled {
+      padding: 10px 0;
+    }
+
+    .nav-links a {
+      color: var(--sage);
+      font-weight: 800;
+      font-size: 0.82rem;
+    }
+
+    .nav-links a:nth-child(even) {
+      color: var(--rose-dark);
+    }
+
+    .nav-links {
+      gap: 16px;
+    }
+
+    .mobile-menu .section-link {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--sage);
+    }
+
+    .brand-icon {
+      background: var(--sage);
+      box-shadow: 0 6px 18px rgba(14, 92, 82, 0.25);
+    }
+
+    .nav .brand-text h1 {
+      color: var(--rose);
+    }
+
+    .brand-text span {
+      color: var(--gold-dark);
+    }
+
+    .nav-actions .btn {
+      background: var(--rose);
+      box-shadow: 0 8px 20px rgba(223, 107, 82, 0.24);
+    }
+
+    #products {
+      min-height: 100vh;
+      padding: 132px 0 72px;
+    }
+
+    #products .sec-header {
+      margin-bottom: 2rem;
+    }
+
+    #products .sec-header .badge-pill {
+      background: var(--sage-light);
+      border-color: rgba(14, 92, 82, 0.25);
+      color: var(--sage);
+    }
+
+    #products .sec-header h2 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--heading);
+    }
+
+    #products .sec-header h2 .grad-text {
+      background: none;
+      color: var(--rose);
+      -webkit-text-fill-color: currentColor;
+    }
+
+    #products .sec-header p {
+      display: none;
+    }
+
+    .grad-text {
+      background: linear-gradient(110deg, var(--sage), var(--teal), var(--rose));
+    }
+
+    .prod-filter-nav {
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+      padding-bottom: 4px;
+      overflow-x: auto;
+    }
+
+    .filter-btn {
+      border-color: rgba(14, 92, 82, 0.18);
+      color: var(--sage);
+      background: rgba(255, 253, 248, 0.7);
+      white-space: nowrap;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: #fff;
+    }
+
+    .products-grid {
+      gap: 22px;
+    }
+
+    #products .sec-header,
+    #products .prod-filter-nav {
+      animation: catalogRise 0.7s var(--ease) both;
+    }
+
+    #products .prod-filter-nav {
+      animation-delay: 0.08s;
+    }
+
+    #products .product-card {
+      animation: catalogRise 0.7s var(--ease) both;
+    }
+
+    #products .product-card:nth-child(2) { animation-delay: 0.08s; }
+    #products .product-card:nth-child(3) { animation-delay: 0.16s; }
+    #products .product-card:nth-child(4) { animation-delay: 0.24s; }
+    #products .product-card:nth-child(5) { animation-delay: 0.32s; }
+    #products .product-card:nth-child(6) { animation-delay: 0.4s; }
+
+    @keyframes catalogRise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-card {
+      border-radius: 14px;
+      border-color: rgba(14, 92, 82, 0.14);
+      box-shadow: var(--shadow-sm);
+      background: var(--bg-card);
+    }
+
+    .product-card:hover {
+      border-color: var(--rose);
+      box-shadow: var(--shadow-md);
+    }
+
+    .prod-img-wrap img {
+      transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
+    }
+
+    .product-card:hover .prod-img-wrap img {
+      transform: scale(1.06);
+      filter: saturate(1.08);
+    }
+
+    .prod-img-wrap {
+      background: var(--sage-light);
+    }
+
+    .prod-tag {
+      background: var(--rose);
+    }
+
+    .prod-title {
+      color: var(--heading);
+    }
+
+    .prod-rating,
+    .price-curr {
+      color: var(--gold-dark);
+    }
+
+    .ph-pill {
+      background: var(--sage-light);
+      color: var(--sage);
+    }
+
+    .prod-bottom .btn-primary {
+      background: var(--sage);
+      box-shadow: 0 8px 18px rgba(14, 92, 82, 0.22);
+    }
+
+    .float-wa {
+      background: var(--rose);
+      box-shadow: 0 10px 26px rgba(223, 107, 82, 0.35);
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 108px 0 44px; }
+      #products { padding-top: 56px; }
+      .nav-links { display: none; }
+      .nav-actions .cart-btn-nav { display: flex; }
+      .brand-text span { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1809,15 +2134,6 @@
     <i class="fab fa-instagram"></i>
   </a>
 
-  <!-- TOP FLASH SALE ANNOUNCEMENT BAR -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <span>🌸 <strong>SPRING GLOW SALE:</strong> Flat 20% OFF on all Handmade Herbal Hair Oils &amp; Makeup!</span>
-      <span>• Free Delivery in Karachi on orders over Rs. 1,500</span>
-      <span class="timer-pill" id="flashTimer">08:45:20 Remaining</span>
-    </div>
-  </div>
-
   <!-- MAIN NAVIGATION -->
   <nav class="nav" id="mainNav">
     <div class="container nav-inner">
@@ -1832,12 +2148,11 @@
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#products">Products</a>
-        <a href="#quiz">Glow Quiz</a>
-        <a href="#transformation">Results</a>
         <a href="#ingredients">Ingredients</a>
-        <a href="#delivery">Karachi Delivery</a>
+        <a href="#delivery">Delivery</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div class="nav-actions">
@@ -1848,7 +2163,7 @@
         <a class="btn btn-primary btn-sm" href="https://wa.me/923001234567?text=Hi%20Mrs%20Zeeshan!%20I%20want%20to%20order%20handmade%20beauty%20products." target="_blank">
           <i class="fab fa-whatsapp"></i> Order on WhatsApp
         </a>
-        <button class="hamburger" id="hamBtn" aria-label="Toggle Navigation">
+        <button class="hamburger" id="hamBtn" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="mobileMenu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -1860,12 +2175,21 @@
     <button class="mobile-close" id="menuCloseBtn"><i class="fas fa-times"></i></button>
     <a href="#home" onclick="closeMobMenu()">Home</a>
     <a href="#products" onclick="closeMobMenu()">Products</a>
-    <a href="#quiz" onclick="closeMobMenu()">Glow Quiz</a>
-    <a href="#transformation" onclick="closeMobMenu()">Results</a>
-    <a href="#ingredients" onclick="closeMobMenu()">Ingredients</a>
-    <a href="#delivery" onclick="closeMobMenu()">Karachi Delivery</a>
-    <a href="#reviews" onclick="closeMobMenu()">Reviews</a>
-    <a href="#contact" onclick="closeMobMenu()">Contact &amp; Order</a>
+    <span class="menu-heading">Shop by category</span>
+    <div class="menu-category-grid">
+      <a href="#products" onclick="selectCategory('hair'); closeMobMenu();">Hair Oils</a>
+      <a href="#products" onclick="selectCategory('skincare'); closeMobMenu();">Skincare</a>
+      <a href="#products" onclick="selectCategory('makeup'); closeMobMenu();">Makeup</a>
+      <a href="#products" onclick="selectCategory('soap'); closeMobMenu();">Body Bars</a>
+      <a href="#products" onclick="selectCategory('bundle'); closeMobMenu();">Gift Bundles</a>
+      <a href="#products" onclick="selectCategory('all'); closeMobMenu();">View All</a>
+    </div>
+    <span class="menu-heading">Explore</span>
+    <a class="section-link" href="#ingredients" onclick="closeMobMenu()">Ingredients</a>
+    <a class="section-link" href="#delivery" onclick="closeMobMenu()">Delivery</a>
+    <a class="section-link" href="#reviews" onclick="closeMobMenu()">Reviews</a>
+    <a class="section-link" href="#faq" onclick="closeMobMenu()">FAQ</a>
+    <a class="section-link" href="#contact" onclick="closeMobMenu()">Contact</a>
     <a class="btn btn-primary" href="https://wa.me/923001234567" target="_blank">
       <i class="fab fa-whatsapp"></i> WhatsApp Us
     </a>
@@ -1887,7 +2211,7 @@
           </h1>
 
           <p class="hero-subtitle">
-            Pure herbal hair growth oils, 24K Kashmiri saffron glow serums, organic lip &amp; cheek tints, and raw haldi skincare — specially made for girls who cherish chemical-free, natural radiance every single day.
+            Handmade hair oils, glow skincare, and natural makeup for your everyday ritual.
           </p>
 
           <div class="hero-actions">
@@ -2033,8 +2357,8 @@
           <div class="product-card reveal" data-category="hair">
             <div class="prod-img-wrap">
               <span class="prod-tag">#1 Bestseller</span>
-              <img src="https://images.unsplash.com/photo-1608248597359-2fb0c9e69623?auto=format&fit=crop&w=700&q=80" alt="Mrs Zeeshan Miracle Rosemary & Onion Hair Growth Oil" />
-              <div class="prod-save" onclick="quickLike(this)"><i class="far fa-heart"></i></div>
+              <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=700&q=80" alt="Mrs Zeeshan Miracle Rosemary & Onion Hair Growth Oil" />
+              <button class="prod-save" type="button" onclick="quickLike(this)" aria-label="Save Miracle Rosemary and Onion Hair Growth Oil" aria-pressed="false"><i class="far fa-heart"></i></button>
             </div>
             <div class="prod-content">
               <div class="prod-rating">
@@ -2065,7 +2389,7 @@
             <div class="prod-img-wrap">
               <span class="prod-tag">Viral Glow</span>
               <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80" alt="Pure Kashmiri Saffron & Rose 24K Glow Serum" />
-              <div class="prod-save" onclick="quickLike(this)"><i class="far fa-heart"></i></div>
+              <button class="prod-save" type="button" onclick="quickLike(this)" aria-label="Save Pure Kashmiri Saffron Glow Serum" aria-pressed="false"><i class="far fa-heart"></i></button>
             </div>
             <div class="prod-content">
               <div class="prod-rating">
@@ -2096,7 +2420,7 @@
             <div class="prod-img-wrap">
               <span class="prod-tag">Girl Favorite</span>
               <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=80" alt="Mrs Zeeshan Organic Beetroot Lip and Cheek Tint" />
-              <div class="prod-save" onclick="quickLike(this)"><i class="far fa-heart"></i></div>
+              <button class="prod-save" type="button" onclick="quickLike(this)" aria-label="Save Organic Beetroot Lip and Cheek Tint" aria-pressed="false"><i class="far fa-heart"></i></button>
             </div>
             <div class="prod-content">
               <div class="prod-rating">
@@ -2126,8 +2450,8 @@
           <div class="product-card reveal" data-category="soap">
             <div class="prod-img-wrap">
               <span class="prod-tag">Pure Herb</span>
-              <img src="https://images.unsplash.com/photo-1607006314393-4796245f7823?auto=format&fit=crop&w=700&q=80" alt="Handmade Raw Haldi and Honey Brightening Soap" />
-              <div class="prod-save" onclick="quickLike(this)"><i class="far fa-heart"></i></div>
+              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Handmade Raw Haldi and Honey Brightening Soap" />
+              <button class="prod-save" type="button" onclick="quickLike(this)" aria-label="Save Handmade Raw Haldi and Honey Soap" aria-pressed="false"><i class="far fa-heart"></i></button>
             </div>
             <div class="prod-content">
               <div class="prod-rating">
@@ -2158,7 +2482,7 @@
             <div class="prod-img-wrap">
               <span class="prod-tag">Ancient Recipe</span>
               <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=700&q=80" alt="Mrs Zeeshan Herbal Scalp Elixir 14 Herbs" />
-              <div class="prod-save" onclick="quickLike(this)"><i class="far fa-heart"></i></div>
+              <button class="prod-save" type="button" onclick="quickLike(this)" aria-label="Save 14 Herbs Royal Scalp Rescue Elixir" aria-pressed="false"><i class="far fa-heart"></i></button>
             </div>
             <div class="prod-content">
               <div class="prod-rating">
@@ -2189,7 +2513,7 @@
             <div class="prod-img-wrap">
               <span class="prod-tag">Best Value</span>
               <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Royal Bridal Glow 5-Piece Hamper by Mrs Zeeshan" />
-              <div class="prod-save" onclick="quickLike(this)"><i class="far fa-heart"></i></div>
+              <button class="prod-save" type="button" onclick="quickLike(this)" aria-label="Save Royal Bridal Glow Luxury Hamper" aria-pressed="false"><i class="far fa-heart"></i></button>
             </div>
             <div class="prod-content">
               <div class="prod-rating">
@@ -2775,20 +3099,6 @@
       }
     }, { passive: true });
 
-    /* Flash Sale Countdown Timer */
-    function startFlashTimer() {
-      let duration = 8 * 3600 + 45 * 60 + 20; // 8h 45m 20s
-      const timerEl = document.getElementById('flashTimer');
-      setInterval(() => {
-        if (duration > 0) duration--;
-        const hrs = String(Math.floor(duration / 3600)).padStart(2, '0');
-        const mins = String(Math.floor((duration % 3600) / 60)).padStart(2, '0');
-        const secs = String(duration % 60).padStart(2, '0');
-        if (timerEl) timerEl.textContent = `${hrs}:${mins}:${secs} Remaining`;
-      }, 1000);
-    }
-    startFlashTimer();
-
     /* Floating Particles Canvas */
     const canvas = document.getElementById('pcanvas');
     const ctx = canvas.getContext('2d');
@@ -2800,11 +3110,10 @@
       const count = Math.max(25, Math.floor((W * H) / 16000));
       particles = [];
       const palette = [
-        'rgba(200, 90, 128,',
-        'rgba(197, 154, 83,',
-        'rgba(94, 148, 98,',
-        'rgba(73, 152, 152,',
-        'rgba(142, 111, 168,'
+        'rgba(14, 92, 82,',
+        'rgba(229, 184, 79,',
+        'rgba(223, 107, 82,',
+        'rgba(46, 130, 118,'
       ];
       for (let i = 0; i < count; i++) {
         particles.push({
@@ -2856,10 +3165,14 @@
     const menuCloseBtn = document.getElementById('menuCloseBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
-    if (hamBtn) hamBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    if (hamBtn) hamBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      hamBtn.setAttribute('aria-expanded', 'true');
+    });
     if (menuCloseBtn) menuCloseBtn.addEventListener('click', closeMobMenu);
     function closeMobMenu() {
       if (mobileMenu) mobileMenu.classList.remove('open');
+      if (hamBtn) hamBtn.setAttribute('aria-expanded', 'false');
     }
 
     /* Product Filter Logic */
@@ -2877,17 +3190,26 @@
       });
     }
 
+    function selectCategory(category) {
+      const filterButton = Array.from(document.querySelectorAll('.filter-btn'))
+        .find(button => button.getAttribute('onclick')?.includes(`'${category}'`));
+      filterProducts(category, filterButton);
+      document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
     /* Quick Heart / Save Trigger */
     function quickLike(btn) {
       const icon = btn.querySelector('i');
       if (icon.classList.contains('far')) {
         icon.classList.remove('far');
         icon.classList.add('fas');
-        btn.style.color = '#C85A80';
+        btn.style.color = 'var(--rose)';
+        btn.setAttribute('aria-pressed', 'true');
         showToast('Saved to your favorites!');
       } else {
         icon.classList.remove('fas');
         icon.classList.add('far');
+        btn.setAttribute('aria-pressed', 'false');
       }
     }
 

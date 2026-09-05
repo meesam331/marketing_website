@@ -251,12 +251,18 @@
     }
 
     .grad-text {
+      color: var(--rose-dark);
+      -webkit-text-fill-color: var(--rose-dark);
+    }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+      .grad-text {
       background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 50%, var(--rose-dark) 100%);
       background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       animation: textShimmer 6s ease infinite;
+      }
     }
     @keyframes textShimmer {
       0%, 100% { background-position: 0% 50%; }

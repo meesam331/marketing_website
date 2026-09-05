@@ -251,18 +251,10 @@
     }
 
     .grad-text {
-      color: var(--rose-dark);
-      -webkit-text-fill-color: var(--rose-dark);
-    }
-    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-      .grad-text {
-      background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 50%, var(--rose-dark) 100%);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: textShimmer 6s ease infinite;
-      }
+      background: none;
+      color: var(--heading);
+      -webkit-text-fill-color: currentColor;
+      animation: none;
     }
     @keyframes textShimmer {
       0%, 100% { background-position: 0% 50%; }
@@ -1982,7 +1974,10 @@
     }
 
     .grad-text {
-      background: linear-gradient(110deg, var(--sage), var(--teal), var(--rose));
+      background: none;
+      color: var(--heading);
+      -webkit-text-fill-color: currentColor;
+      animation: none;
     }
 
     .prod-filter-nav {
